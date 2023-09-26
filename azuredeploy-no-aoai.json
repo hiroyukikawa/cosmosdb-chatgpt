@@ -11,7 +11,7 @@
   "parameters": {
     "location": {
       "type": "string",
-      "defaultValue": "East US",
+      "defaultValue": "Japan East",
       "allowedValues": [
         "Australia East",
         "Canada East",
@@ -77,7 +77,7 @@
     },
     "appGitRepository": {
       "type": "string",
-      "defaultValue": "https://github.com/azure-samples/cosmosdb-chatgpt.git",
+      "defaultValue": "https://github.com/hiroyukikawa/cosmosdb-chatgpt.git",
       "metadata": {
         "description": "Git repository URL for the chat application. This defaults to the [`azure-samples/cosmosdb-chatgpt`](https://github.com/azure-samples/cosmosdb-chatgpt) repository."
       }
@@ -105,10 +105,10 @@
     },
     "appServiceSettings": {
       "plan": {
-        "name": "[format('{0}-web-plan', parameters('name'))]"
+        "name": "[format('asp-{0}', parameters('name'))]"
       },
       "web": {
-        "name": "[format('{0}-web', parameters('name'))]",
+        "name": "[format('{0}', parameters('name'))]",
         "git": {
           "repo": "[parameters('appGitRepository')]",
           "branch": "[parameters('appGetRepositoryBranch')]"
